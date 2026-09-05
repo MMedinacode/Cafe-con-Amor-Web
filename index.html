@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Café con Amor · Cafetería familiar en Padre Hurtado</title>
+<!--
+  DATOS REALES verificados en Google Maps e Instagram el 05-09-2026, sobre una base ya
+  confirmada directamente por el cliente en una sesión anterior:
+  - Café con Amor, Alberto Hurtado 59, Padre Hurtado, Región Metropolitana.
+  - WhatsApp CONFIRMADO POR EL CLIENTE: +56 9 9882 3403 (coincide con el teléfono publicado
+    en su ficha de Google Maps).
+  - Instagram real: @cafeconamor.chile (2114 seguidores). TikTok real confirmado por el
+    cliente: @cafeconamor.chile.
+  - Google Maps: 4.4★ / 14 opiniones. Place ID real: 0x9662e7005124a5b3:0x4903954482336392
+    (obtenido vía Compartir → Incorporar un mapa).
+  - Horario real (Google Maps, sección Horario de atención, coincide con lo ya confirmado
+    antes): Martes a domingo 16:00–21:00 · Lunes cerrado.
+  - Servicios reales confirmados en Google Maps: consumo en el lugar, pedidos desde el
+    automóvil, entrega a domicilio.
+  - 3 reseñas reales transcritas de capturas de pantalla de Google Maps entregadas por el
+    cliente: Víctor Rojas Duarte, Jordan Boado, Mirentxu Cañas.
+  - PENDIENTE DE CONFIRMAR: el negocio no tiene una carta con precios publicada. Las 4
+    categorías (Coffee Time, Tea Vibes, Delicias, Ice Cream) SÍ son reales (destacados de su
+    propio Instagram), pero los productos y precios de cada una son EJEMPLOS REALISTAS
+    marcados como placeholder — se mantiene así desde la sesión anterior, ya que el cliente
+    no ha confirmado la carta real todavía.
+  - No se encontró presencia en apps de delivery (Rappi/Uber Eats/PedidosYa).
+  - Fotos: 6 fotos reales del local entregadas por el cliente (fotos/*.jpg) + logo real
+    (fotos/logo.png).
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="loadScreen">
+  <img src="fotos/logo.png" alt="Café con Amor">
+</div>
+
+<header id="site-header">
+  <div class="nav-bar">
+    <div class="nav-brand script"><img src="fotos/logo.png" alt="Logo Café con Amor"><span>Café con Amor</span></div>
+    <nav class="nav-links" id="main-nav">
+      <button class="nav-link active" data-tab="inicio">Inicio</button>
+      <button class="nav-link" data-tab="nosotros">Nosotros</button>
+      <button class="nav-link" data-tab="carta">Carta</button>
+      <button class="nav-link" data-tab="resenas">Reseñas</button>
+      <button class="nav-link" data-tab="visitanos">Visítanos</button>
+    </nav>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <button class="cart-btn" id="cartBtn">Pedido (<span id="cartCount">0</span>)</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ===================== INICIO ===================== -->
+  <section class="tab-panel active" data-tab-panel="inicio">
+    <div class="hero">
+      <img src="fotos/fachada.jpg" alt="Fachada y patio de Café con Amor, Padre Hurtado" class="bg-photo">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Padre Hurtado · Cafetería pet-friendly</p>
+        <h1>Siente la magia<br>en cada café.</h1>
+        <p class="lead">Un patio para compartir en familia, con opciones sin gluten, veggie y sin azúcar — y tu perro es siempre bienvenido.</p>
+        <div class="hero-ctas">
+          <button class="btn btn-primary" data-tab="carta">Ver la carta</button>
+          <button class="btn btn-outline-light" data-tab="visitanos">Cómo llegar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NOSOTROS ===================== -->
+  <section class="tab-panel" data-tab-panel="nosotros">
+    <div class="section-inner">
+      <p class="eyebrow">Lo que somos</p>
+      <h2 class="section-title dot-underline reveal" style="margin-bottom:40px;">Un ratito para respirar.</h2>
+      <div class="pilar-grid reveal">
+        <div class="pilar-card">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 12a8 8 0 1 1 16 0c0 4-3 6-3 8H7c0-2-3-4-3-8Z"/><path d="M9 21h6"/></svg>
+          <h3>Opciones sin gluten</h3>
+          <p>Alternativas pensadas para que nadie se quede sin disfrutar la carta.</p>
+        </div>
+        <div class="pilar-card">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3v18M5 8c0 3 3 4 7 4s7-1 7-4M5 16c0 2 3 3 7 3s7-1 7-3"/></svg>
+          <h3>Veggie, vegan &amp; sin azúcar</h3>
+          <p>Una selección para quienes cuidan lo que comen, sin resignar sabor.</p>
+        </div>
+        <div class="pilar-card">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M8 13c1 1.5 2.5 2 4 2s3-.5 4-2M9 9h.01M15 9h.01"/></svg>
+          <h3>Para toda la familia</h3>
+          <p>Patio con juegos, juegos de mesa y libros disponibles para niños y adultos.</p>
+        </div>
+      </div>
+      <div class="badge-row reveal">
+        <span class="badge-dot">🐾 Pet friendly</span>
+        <span class="badge-dot">🚗 Pedidos desde el auto</span>
+        <span class="badge-dot">🛵 Entrega a domicilio</span>
+      </div>
+
+      <div class="historia-grid reveal" style="margin-top:88px;">
+        <div class="historia-copy">
+          <p class="eyebrow">Nuestra historia</p>
+          <h2 class="section-title dot-underline" style="margin-bottom:24px;">Las cosas buenas toman tiempo.</h2>
+          <p>Café con Amor nació como un rincón para compartir en Padre Hurtado: un patio con juegos para los más chicos, rincones decorados a mano y una carta con opciones para todos, incluyendo alternativas sin gluten y veganas.</p>
+          <p>Aquí las mascotas también son parte de la familia: nuestras puertas están abiertas para que vengas con tu perro, te sientes con calma y te quedes el tiempo que quieras.</p>
+        </div>
+        <div class="historia-photo">
+          <img src="fotos/rincon.jpg" alt="Rincón decorado de Café con Amor, letrero 'Las cosas buenas toman tiempo'">
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top:20px;">
+        <p class="eyebrow">Un vistazo</p>
+        <h2 class="section-title dot-underline">Así se vive Café con Amor.</h2>
+        <div class="gallery-grid">
+          <figure><img src="fotos/interior.jpg" alt="Interior con living y alas decorativas de Café con Amor"><div class="gallery-tag">El living interior</div></figure>
+          <figure><img src="fotos/bebidas-cheesecake.jpg" alt="Bebidas y cheesecake de frutos del bosque de Café con Amor"><div class="gallery-tag">Cheesecake y matcha</div></figure>
+          <figure><img src="fotos/tarta-limon.jpg" alt="Tarta de limón con merengue de Café con Amor"><div class="gallery-tag">Tarta de limón</div></figure>
+          <figure><img src="fotos/fachada.jpg" alt="Patio de Café con Amor de día"><div class="gallery-tag">El patio de siempre</div></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CARTA ===================== -->
+  <section class="tab-panel" data-tab-panel="carta">
+    <div class="section-inner">
+      <p class="eyebrow">Nuestra carta</p>
+      <h2 class="section-title dot-underline reveal" style="margin-bottom:8px;">Café, dulces y helados.</h2>
+      <p class="menu-note reveal">*Las 4 categorías son reales (destacados de su propio Instagram), pero el negocio no tiene una carta con precios publicada — los productos y precios de abajo son ejemplos de referencia, a confirmar directamente con el local.</p>
+      <div id="menuTabs" class="menu-tabs reveal"></div>
+      <div id="menuPanels"></div>
+    </div>
+  </section>
+
+  <!-- ===================== RESEÑAS ===================== -->
+  <section class="tab-panel" data-tab-panel="resenas" style="background:var(--brown); color:var(--cream);">
+    <div class="section-inner">
+      <p class="eyebrow" style="text-align:center;">Lo que dicen de nosotros</p>
+      <div class="review-summary reveal">
+        <div class="stars">★★★★☆</div>
+        <p class="big script">4.4</p>
+        <p class="mono" style="opacity:.7; text-transform:uppercase; font-size:.75rem;">14 opiniones en Google Maps</p>
+      </div>
+      <div class="reviews-grid reveal">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Muy lindo lugar, tienen varias opciones incluso cosas sin gluten. Además tienen un montón de juegos de mesa, libros; tanto para niños como adultos. 10/10"</p>
+          <div class="review-when">Víctor Rojas Duarte · Local Guide</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Todo muy rico y fresco, se nota el cariño en las preparaciones. El ambiente es muy tranquilo y tienen juegos para niños, juegos de mesa y libros para compartir."</p>
+          <div class="review-when">Jordan Boado</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Realmente un lugar donde me sentí segura con mi alimentación: sin gluten, sin lactosa y sin azúcar. La atención, maravillosa. Gracias por tanto dulce sin culpa."</p>
+          <div class="review-when">Mirentxu Cañas · Local Guide</div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:48px;" class="reveal">
+        <a class="btn btn-outline-light" href="https://search.google.com/local/writereview?placeid=0x9662e7005124a5b3:0x4903954482336392" target="_blank" rel="noopener">Déjanos tu reseña en Google</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VISÍTANOS ===================== -->
+  <section class="tab-panel" data-tab-panel="visitanos">
+    <div class="section-inner">
+      <p class="eyebrow">Visítanos</p>
+      <h2 class="section-title dot-underline" style="margin-bottom:40px;">Aquí te esperamos.</h2>
+      <div class="visit-grid">
+        <div class="visit-info">
+          <div class="visit-label">Dirección</div>
+          <p>Alberto Hurtado 59<br>Padre Hurtado, Región Metropolitana</p>
+
+          <div class="visit-label">Horario</div>
+          <div class="status-pill"><span class="status-dot" id="statusDot"></span><span id="statusText">Cargando…</span></div>
+          <table class="hours-table" id="hoursTable"></table>
+
+          <div class="badge-row" style="margin-top:24px;">
+            <span class="badge-dot">🐾 Pet friendly</span>
+            <span class="badge-dot">🚗 Pedidos desde el auto</span>
+            <span class="badge-dot">🛵 Entrega a domicilio</span>
+          </div>
+
+          <div class="contact-grid">
+            <a class="contact-box" href="https://wa.me/56998823403" target="_blank" rel="noopener">
+              <div class="lbl">WhatsApp</div>
+              <div class="val">+56 9 9882 3403</div>
+            </a>
+            <a class="contact-box" href="https://instagram.com/cafeconamor.chile" target="_blank" rel="noopener">
+              <div class="lbl">Instagram</div>
+              <div class="val">@cafeconamor.chile</div>
+            </a>
+            <a class="contact-box" href="https://tiktok.com/@cafeconamor.chile" target="_blank" rel="noopener">
+              <div class="lbl">TikTok</div>
+              <div class="val">@cafeconamor.chile</div>
+            </a>
+            <a class="contact-box" href="https://www.google.com/maps/dir/?api=1&destination=Cafe+con+Amor&destination_place_id=0x9662e7005124a5b3:0x4903954482336392" target="_blank" rel="noopener">
+              <div class="lbl">Google Maps</div>
+              <div class="val">Cómo llegar</div>
+            </a>
+            <a class="contact-box" href="https://waze.com/ul?ll=-33.59409267332308,-70.8189361451221&navigate=yes" target="_blank" rel="noopener">
+              <div class="lbl">Waze</div>
+              <div class="val">Ir con Waze</div>
+            </a>
+          </div>
+        </div>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13293.72820306651!2d-70.8189361451221!3d-33.59409267332308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662e7005124a5b3%3A0x4903954482336392!2sCaf%C3%A9%20con%20Amor!5e0!3m2!1ses-419!2scl!4v1788583776879!5m2!1ses-419!2scl" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img src="fotos/logo.png" alt="Logo Café con Amor">
+  <div class="brand script">Café con Amor</div>
+  <p>Alberto Hurtado 59, Padre Hurtado · <a href="https://instagram.com/cafeconamor.chile" target="_blank" rel="noopener">@cafeconamor.chile</a></p>
+  <p style="opacity:.6; font-size:.8rem;">Sitio demo diseñado con cariño ✨</p>
+</footer>
+
+<a id="floatWhatsapp" class="float-widget" href="https://wa.me/56998823403" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M20 12a8 8 0 1 1-3.4-6.55M20 12l-1.2 4.4L14 15"/><path d="M8.5 9.5c.3 2.7 2.3 4.7 5 5"/></svg>
+</a>
+<a id="floatInstagram" class="float-widget" href="https://instagram.com/cafeconamor.chile" target="_blank" rel="noopener" aria-label="Instagram">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+</a>
+<a id="floatTiktok" class="float-widget" href="https://tiktok.com/@cafeconamor.chile" target="_blank" rel="noopener" aria-label="TikTok">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M13 3v11.5a3.5 3.5 0 1 1-3-3.46"/><path d="M13 3c.3 2.2 2 3.9 4 4.2"/></svg>
+</a>
+<button id="cartFab" class="float-widget" aria-label="Ver pedido">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+</button>
+
+<div id="cartOverlay" class="overlay"></div>
+<div id="cartPanel" class="cart-panel">
+  <div class="cart-header">
+    <h3 class="script">Tu pedido</h3>
+    <button class="cart-close" id="cartCloseBtn">Cerrar ✕</button>
+  </div>
+  <div id="cartLines" class="cart-lines"></div>
+  <div class="cart-footer">
+    <div class="delivery-row" id="deliveryRow">
+      <button class="delivery-btn active" data-mode="Retiro en local">Retiro</button>
+      <button class="delivery-btn" data-mode="Pedido desde el auto">Desde el auto</button>
+      <button class="delivery-btn" data-mode="Delivery">Delivery</button>
+    </div>
+    <div class="cart-total-row"><span>Total estimado</span><span id="cartTotal">$0</span></div>
+    <a id="checkoutBtn" class="btn btn-primary" style="width:100%; justify-content:center;" href="#" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
+  </div>
+</div>
+
+<div id="modalOverlay" class="overlay"></div>
+<div id="modalBox" class="modal-box">
+  <button class="modal-close" id="modalCloseBtn">✕</button>
+  <div class="modal-cat" id="modalCategory"></div>
+  <h3 id="modalName"></h3>
+  <p id="modalDesc"></p>
+  <div class="modal-footer">
+    <span class="modal-price" id="modalPrice"></span>
+    <button class="btn btn-primary" id="modalAddBtn">Agregar</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
