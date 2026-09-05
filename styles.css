@@ -123,6 +123,17 @@ section{padding:96px 0;}
 .review-card p{line-height:1.65; margin:0 0 16px; opacity:.92;}
 .review-when{font-family:'Space Mono',monospace; font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; opacity:.6;}
 
+/* ---------- Ventana de redes sociales ---------- */
+.social-window{margin-top:72px; border-top:1px solid rgba(251,246,236,0.15); padding-top:56px;}
+.social-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px;}
+.social-card{position:relative; display:block; border-radius:14px; overflow:hidden; aspect-ratio:9/16;}
+.social-card img{width:100%; height:100%; object-fit:cover; transition:transform .4s ease;}
+.social-card:hover img{transform:scale(1.06);}
+.play-overlay{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(90,56,32,0.25); transition:background .2s ease;}
+.play-overlay svg{width:24px; height:24px; opacity:.9; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.4));}
+.social-card:hover .play-overlay{background:rgba(90,56,32,0.4);}
+.social-platform{position:absolute; left:10px; bottom:10px; font-family:'Space Mono',monospace; font-size:.6rem; text-transform:uppercase; letter-spacing:.08em; color:#fff; background:rgba(90,56,32,0.55); padding:4px 10px; border-radius:999px;}
+
 /* ---------- Visítanos ---------- */
 .visit-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
 .visit-label{color:var(--orange); font-family:'Space Mono',monospace; font-size:.66rem; text-transform:uppercase; letter-spacing:.15em; margin:22px 0 6px;}
