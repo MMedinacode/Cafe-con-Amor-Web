@@ -148,7 +148,7 @@ section{padding:96px 0;}
 .contact-box:active{transform:scale(0.96);}
 .contact-box:hover{background:rgba(90,56,32,0.05);}
 .contact-box .lbl{font-family:'Space Mono',monospace; font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--orange); margin-bottom:6px;}
-.contact-box .val{font-size:.88rem;}
+.contact-box .val{font-size:.88rem; overflow-wrap:anywhere;}  /* @cafeconamor.chile mide 133px en una caja de 123px y se salia */
 .map-wrap{border-radius:16px; overflow:hidden; height:100%; min-height:340px; filter:sepia(8%) saturate(90%);}
 .map-wrap iframe{width:100%; height:100%; min-height:340px; border:0;}
 @media (max-width:860px){ .visit-grid{grid-template-columns:1fr;} }
@@ -209,4 +209,14 @@ footer a{color:var(--rose);}
   .hero-inner{padding:110px 88px 48px 20px;}
   .hero-ctas{flex-direction:column; align-items:stretch;}
   .hero-ctas .btn{text-align:center; justify-content:center;}
+}
+
+/* Quien active "reducir movimiento" en su sistema deberia ver la pagina
+   quieta: no es una preferencia estetica, hay gente a la que el
+   movimiento le produce mareo. */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important; animation-iteration-count:1 !important;
+    transition-duration:.01ms !important; scroll-behavior:auto !important;
+  }
 }
