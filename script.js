@@ -44,40 +44,33 @@ document.getElementById('navToggle').addEventListener('click', () => {
 });
 
 /* --------------------------------------------------------------
-   CARTA — las 4 categorías son reales (destacados de su propio
-   Instagram @cafeconamor.chile), pero el negocio no tiene una
-   carta con precios publicada. Productos y precios de referencia,
-   marcados abiertamente como placeholder — confirmar con el local.
+   CARTA — CORREGIDA 02-10-2026. Antes llevaba productos y precios
+   INVENTADOS (espresso $2.500, brownie $3.200…): se borraron todos.
+   Queda sólo lo comprobable:
+   - Las 4 categorías: son los destacados de su propio Instagram.
+   - Cheesecake de frutos del bosque y matcha: salen en una foto real
+     del local (fotos/bebidas-cheesecake).
+   - Sin precios: el local no publica carta en ningún canal. Todo va
+     en «Consultar» hasta que nos pasen la suya.
 -------------------------------------------------------------- */
 const MENU = [
   { cat: 'Coffee Time', items: [
-    { n: 'Espresso', d: 'Café de especialidad en su versión más pura e intensa.', p: 2500 },
-    { n: 'Latte', d: 'Café con leche texturizada, suave y equilibrado.', p: 3500 },
-    { n: 'Capuccino', d: 'Café con leche texturizada y una capa de espuma cremosa.', p: 3500 },
-    { n: 'Mocaccino', d: 'Café, chocolate y leche texturizada en un solo vaso.', p: 3900 },
-    { n: 'Café en Grano (250g)', d: 'Café de especialidad en grano, ideal para preparar en casa.', p: 6500, tag: 'Destacado' },
+    { n: 'Cafés', d: 'Pregúntanos qué preparaciones tenemos hoy.', p: null },
   ]},
   { cat: 'Tea Vibes', items: [
-    { n: 'Matcha Latte Helado', d: 'Té matcha con leche texturizada servido bien frío.', p: 4200 },
-    { n: 'Chai Latte', d: 'Té chai especiado con leche texturizada.', p: 3900 },
-    { n: 'Té Verde', d: 'Infusión de té verde en hebras.', p: 2800 },
-    { n: 'Infusión Frutal', d: 'Mezcla de frutos rojos e hibisco, ideal para tomar frío o caliente.', p: 2800 },
+    { n: 'Matcha', d: 'Pregúntanos cómo lo preparamos hoy.', p: null },
+    { n: 'Tés e infusiones', d: 'Pregúntanos por las variedades disponibles.', p: null },
   ]},
   { cat: 'Delicias', items: [
-    { n: 'Cheesecake Frutos del Bosque', d: 'Cheesecake cremoso cubierto con compota de frutos del bosque frescos.', p: 4500 },
-    { n: 'Galleta Café con Amor', d: 'Galleta artesanal de la casa, hecha a mano y empaquetada individualmente.', p: 1800 },
-    { n: 'Kuchen de la Casa', d: 'Receta casera de la casa, ideal para acompañar tu café.', p: 3800 },
-    { n: 'Brownie', d: 'Brownie de chocolate húmedo y achocolatado.', p: 3200 },
+    { n: 'Cheesecake de frutos del bosque', d: 'Cheesecake cubierto con frutos del bosque.', p: null },
+    { n: 'Dulces de la vitrina', d: 'Lo que haya hoy en vitrina: pregúntanos.', p: null },
   ]},
   { cat: 'Ice Cream', items: [
-    { n: 'Helado Vainilla', d: 'Bocha de helado artesanal sabor vainilla.', p: 1800 },
-    { n: 'Helado Chocolate', d: 'Bocha de helado artesanal de chocolate.', p: 1800 },
-    { n: 'Helado Frutilla', d: 'Bocha de helado artesanal sabor frutilla.', p: 1800 },
-    { n: 'Helado Sin Azúcar', d: 'Alternativa sin azúcar disponible en la vitrina.', p: 1800, tag: 'Sin azúcar' },
+    { n: 'Helados', d: 'Pregúntanos por los sabores del día.', p: null },
   ]},
 ];
 
-const money = n => '$' + n.toLocaleString('es-CL');
+const money = n => n ? '$' + n.toLocaleString('es-CL') : 'Consultar';
 
 const tabsEl = document.getElementById('menuTabs');
 const panelsEl = document.getElementById('menuPanels');
@@ -172,19 +165,20 @@ function renderCart() {
         <button class="cart-remove" onclick="removeFromCart(${i})">✕</button>
       </div>`).join('');
   }
-  const total = cart.reduce((a, c) => a + c.p, 0);
-  document.getElementById('cartTotal').textContent = money(total);
+  // Sin precios publicados: el total sólo se muestra si todo tiene precio.
+  const total = cart.every(c => c.p) ? cart.reduce((a, c) => a + c.p, 0) : null;
+  document.getElementById('cartTotal').textContent = cart.length ? (total ? money(total) : 'A consultar') : '$0';
   updateCheckoutLink(total);
 }
 function updateCheckoutLink(total) {
-  let msg = 'Hola Café con Amor! Quisiera hacer el siguiente pedido:%0A';
+  let msg = '¡Hola, Café con Amor! Quisiera hacer el siguiente pedido:\n';
   if (cart.length === 0) {
-    msg += '(Aún sin productos seleccionados)%0A';
+    msg += '(Aún sin productos seleccionados)\n';
   } else {
-    cart.forEach(c => { msg += `• ${c.n} (${money(c.p)})%0A`; });
+    cart.forEach(c => { msg += `• ${c.n} (${money(c.p)})\n`; });
   }
-  msg += `%0AMétodo: ${deliveryMode}%0ATotal estimado: ${money(total)}`;
-  document.getElementById('checkoutBtn').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+  msg += `\nMétodo: ${deliveryMode}` + (total ? `\nTotal estimado: ${money(total)}` : '\n¿Me cuentan los precios?');
+  document.getElementById('checkoutBtn').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 }
 function toggleCart(open) { document.getElementById('cartOverlay').classList.toggle('open', open); document.getElementById('cartPanel').classList.toggle('open', open); }
 document.getElementById('cartFab').addEventListener('click', () => toggleCart(true));

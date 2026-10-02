@@ -45,11 +45,9 @@
     automóvil, entrega a domicilio.
   - 3 reseñas reales transcritas de capturas de pantalla de Google Maps entregadas por el
     cliente: Víctor Rojas Duarte, Jordan Boado, Mirentxu Cañas.
-  - PENDIENTE DE CONFIRMAR: el negocio no tiene una carta con precios publicada. Las 4
-    categorías (Coffee Time, Tea Vibes, Delicias, Ice Cream) SÍ son reales (destacados de su
-    propio Instagram), pero los productos y precios de cada una son EJEMPLOS REALISTAS
-    marcados como placeholder — se mantiene así desde la sesión anterior, ya que el cliente
-    no ha confirmado la carta real todavía.
+  - CARTA (corregida 02-10-2026): se borraron los productos y precios INVENTADOS que traía.
+    Quedan las 4 categorías reales (destacados de su Instagram), el cheesecake de frutos del
+    bosque y el matcha (foto real del local), y todo en «Consultar». Pedirles su carta.
   - No se encontró presencia en apps de delivery (Rappi/Uber Eats/PedidosYa).
   - Fotos: 6 fotos reales del local entregadas por el cliente (fotos/*.jpg) + logo real
     (fotos/logo.png).
@@ -57,7 +55,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=02102026">
 </head>
 <body>
 
@@ -159,7 +157,7 @@
     <div class="section-inner">
       <p class="eyebrow">Nuestra carta</p>
       <h2 class="section-title dot-underline reveal" style="margin-bottom:8px;">Café, dulces y helados.</h2>
-      <p class="menu-note reveal">*Las 4 categorías son reales (destacados de su propio Instagram), pero el negocio no tiene una carta con precios publicada — los productos y precios de abajo son ejemplos de referencia, a confirmar directamente con el local.</p>
+      <p class="menu-note reveal">Escríbenos por WhatsApp y te contamos qué hay hoy y sus precios.</p>
       <div id="menuTabs" class="menu-tabs reveal"></div>
       <div id="menuPanels"></div>
     </div>
@@ -330,7 +328,7 @@
   </div>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js?v=02102026"></script>
 <script src="carta-fotos.js"></script>
 <!-- Horario REAL de su ficha de Google Maps (11-09-2026). El módulo horario.js pinta la semana completa y el estado en vivo. -->
 <script>window.HORARIO={dias:["Cerrado","16:00 - 21:00","16:00 - 21:00","16:00 - 21:00","16:00 - 21:00","16:00 - 21:00","16:00 - 21:00"],fuente:"Google Maps, 11-09-2026"};</script>
